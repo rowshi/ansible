@@ -101,6 +101,7 @@ files:
   $modules/cloud/dimensiondata/dimensiondata_network.py: tintoy
   $modules/cloud/docker/:
     ignored: ThomasSteinbach
+    notified: felixfontein
   $modules/cloud/docker/docker_container.py: $team_ansible felixfontein
   $modules/cloud/docker/docker_image.py: $team_ansible
   $modules/cloud/docker/docker_image_facts.py: $team_ansible
@@ -134,14 +135,18 @@ files:
   $modules/cloud/vmware/_vsphere_guest.py: dagwieers
   $modules/cloud/vultr/: $team_vultr
   $modules/cloud/webfaction/: quentinsf
-  $modules/clustering/k8s/: chouseknecht maxamillion fabianvf flaper87 willthames
+  $modules/clustering/k8s/:
+    maintainers: chouseknecht maxamillion fabianvf flaper87 willthames
+    labels: k8s
   $modules/clustering/k8s/_kubernetes.py: supertom
   $modules/clustering/openshift/: chouseknecht maxamillion fabianvf flaper87
   $modules/commands/command.py: $team_ansible
   $modules/commands/raw.py: $team_ansible
   $modules/commands/script.py: $team_ansible
   $modules/commands/shell.py: $team_ansible
-  $modules/crypto/: Spredzy
+  $modules/crypto/:
+    maintainers: Spredzy
+    notified: felixfontein
   $modules/crypto/acme/: resmo felixfontein
   $modules/database/influxdb/: kamsz
   $modules/database/mssql/mssql_db.py: Jmainguy kenichi-ogawa-1988
@@ -307,7 +312,9 @@ files:
     ignored: erydo
   $modules/storage/infinidat/: GR360RY vmalloc
   $modules/storage/netapp/: $team_netapp
-  $modules/storage/purestorage/: sdodsley
+  $modules/storage/purestorage/:
+    maintainers: $team_purestorage
+    labels: pure_storage
   $modules/storage/glusterfs/: devyanikota
   $modules/system/at.py: $team_ansible
   $modules/system/authorized_key.py: $team_ansible
@@ -457,13 +464,16 @@ files:
     labels: cloudstack
   $module_utils/crypto.py:
     maintainers: Spredzy
+    notified: felixfontein
   $module_utils/docker_common.py:
     maintainers: $team_ansible dariko felixfontein jwitko kassiansun tbouvet
   $module_utils/ipa.py:
     maintainers: $team_ipa
   $module_utils/k8s:
     maintainers: chouseknecht maxamillion fabianvf flaper87 willthames
-    labels: clustering
+    labels:
+      - clustering
+      - k8s
   $module_utils/keycloak.py:
     maintainers: eikef
   $module_utils/manageiq.py:
@@ -583,6 +593,9 @@ files:
   $module_utils/remote_management/ucs:
     maintainers: $team_ucs
     labels: ucs
+  $module_utils/pure.py:
+    maintainers: $team_purestorage
+    labels: pure_storage
   $module_utils/netapp:
     maintainers: $team_netapp
   $module_utils/vultr.py: &vultr
@@ -862,6 +875,7 @@ files:
   lib/ansible/plugins/inventory/k8s.py:
     support: community
     maintainers: chouseknecht maxamillion fabianvf flaper87 willthames
+    labels: k8s
   lib/ansible/plugins/inventory/openshift.py:
     support: community
     maintainers: chouseknecht maxamillion fabianvf flaper87 willthames
@@ -896,6 +910,7 @@ files:
   lib/ansible/plugins/lookup/k8s.py:
     support: community
     maintainers: chouseknecht maxamillion fabianvf flaper87 willthames
+    labels: k8s
   lib/ansible/plugins/lookup/nios:
     support: core
     maintainers: $team_networking sganesh-infoblox
@@ -911,6 +926,9 @@ files:
     support: network
     maintainers: $team_networking
     labels: networking
+  lib/ansible/plugins/lookup/rabbitmq.py:
+    maintainers: Im0
+    support: community
   lib/ansible/plugins/netconf/sros.py:
     maintainers: wisotzky $team_networking
     labels: networking
@@ -1084,10 +1102,11 @@ macros:
   team_onyx: samerd
   team_openstack: emonty omgjlk juliakreger rcarrillocruz shrews thingee dagnello
   team_openswitch: Qalthos gdpak
+  team_purestorage: sdodsley
   team_rabbitmq: chrishoffman manuel-sousa hyperized
   team_redfish: jose-delarosa mraineri tomasg2012 billdodd
   team_rhn: alikins barnabycourt flossware vritant
-  team_scaleway: sieben hekonsek Spredzy abarbare anthony25
+  team_scaleway: sieben hekonsek Spredzy abarbare anthony25 pilou-
   team_tower: ghjm jlaska matburt wwitzel3 simfarm ryanpetrello rooftopcellist AlanCoding
   team_ucs: dsoper2 johnamcdonough SDBrett vallard vvb dagwieers
   team_vmware: Akasurde dav1x warthog9
